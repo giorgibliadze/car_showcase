@@ -4,12 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import { CarProps } from "@/types";
 import { CustomButton } from ".";
+import { calculateCarRent } from "@/utils";
 interface CarCardProps {
   car: CarProps;
 }
 
 const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
+  const carRent = calculateCarRent(city_mpg, year);
   return (
     <div className="car-card group">
       <div className="car-card__content">
@@ -18,6 +20,9 @@ const CarCard = ({ car }: CarCardProps) => {
           {model}
         </h2>
       </div>
+      <p>
+        <span>{carRent}</span>
+      </p>
     </div>
   );
 };
