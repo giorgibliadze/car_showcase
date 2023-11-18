@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { SearchManufacturer } from "./";
 import { serialize } from "v8";
@@ -41,7 +41,7 @@ const SearchBar = () => {
     }
 
     if (manufacturer) {
-      searchParams.set("manufacturers", manufacturer);
+      searchParams.set("manufacturer", manufacturer);
     } else {
       searchParams.delete("manufacturer");
     }
