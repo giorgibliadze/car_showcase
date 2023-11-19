@@ -5,8 +5,8 @@ import { fetchCars } from "@/utils";
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer,
-    year: searchParams.year || 2022,
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2015,
     fuel: searchParams.fuel || "",
     limit: searchParams.limit || 10,
     model: searchParams.model || "",
